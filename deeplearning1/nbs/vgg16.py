@@ -89,7 +89,8 @@ class Vgg16():
     def ft(self, num):
         model = self.model
         model.pop()
-        for layer in model.layers: layer.trainable=False
+        for layer in model.layers:
+            layer.trainable=False
         model.add(Dense(num, activation='softmax'))
         self.compile()
 
